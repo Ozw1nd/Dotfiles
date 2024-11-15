@@ -30,7 +30,7 @@ Installation
     * fzf
     * zoxide
 * Change default chell: `sudo chsh -s /bin/zsh`
-* Either copy [kitty](/kitty), [fzf](/fzf) and [oh-my-posh](/oh-my-posh) folders to ~/.config/ by hand, or use [Stow](https://www.gnu.org/software/stow/)
+* Either copy [kitty](kitty/), [fzf](fzf/) and [oh-my-posh](oh-my-posh/) folders to ~/.config/ by hand, or use [Stow](https://www.gnu.org/software/stow/)
     * `cp -r .config/kitty .config/fzf .config/oh-my-posh ~/`
 * Place [.zshrc](/.zshrc) ih your home folder
     * `cp .zshrc ~/`
