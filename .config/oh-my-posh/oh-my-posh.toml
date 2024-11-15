@@ -1,0 +1,129 @@
+############################################################
+#####                 Oh-My-Posh Config                #####
+############################################################
+
+##### Settings #####
+#
+# Set version
+version = 3
+
+# Add space at the end of the prompt
+final_space = true
+
+# Enable automatic upgrade for Oh My Posh
+auto_upgrade = true
+
+# Set terminal title
+console_title_template = "{{ .Shell }} in {{ .Folder }}"
+
+##### Colour palette #####
+#
+# Set colour palette
+[palette]
+    black = "#45475a"
+    red = "#f38ba8"
+    green = "#a6e3a1"
+    yellow = "#f9e2af"
+    blue = "#89b4fa"
+    magenta = "#f5c2e7"
+    cyan = "#94e2d5"
+    white = "#bac2de"
+
+##### Transient Prompt #####
+#
+[transient_prompt]
+newline = true
+background = "transparent"
+foreground = "p:green"
+template = "❮ "
+
+##### Secondary Prompt #####
+#
+[secondary_prompt]
+foreground = "p:green"
+background = "transparent"
+template = "❯❯"
+
+##### Prompt #####
+#
+[[blocks]]
+type = "prompt"
+alignment = "left"
+newline = true
+
+# Current directory module
+    [[blocks.segments]]
+    type = "path"
+    style = "diamond"
+    leading_diamond = ""
+    trailing_diamond = " "
+    background = "p:green"
+    foreground = "p:black"
+
+        [blocks.segments.properties]
+        style = "mixed"
+        mixed_threshold = 10
+        edge_format = "<b>%s</b>"
+        gitdir_format = " %s"
+
+# Git module
+    [[blocks.segments]]
+    type = "git"
+    style = "diamond"
+    leading_diamond = ""
+    trailing_diamond = " "
+    background = "p:cyan"
+    foreground = "p:black"
+    template = " <b>{{ .HEAD }}{{ if gt .Behind 0 }} ↓{{ end }}{{ if gt .Ahead 0 }} ↑{{ end }}{{ if .Working.Changed }} |  {{ .Working.String }}{{ end }}{{ if .Staging.Changed }} |  {{ .Staging.String }}{{ end }}</b> "
+
+        [blocks.segments.properties]
+        fetch_status = true
+        branch_icon = "󰘬 "
+        commit_icon = ' '
+
+[[blocks]]
+type = "prompt"
+alignment = "right"
+
+# Command status module
+    [[blocks.segments]]
+    type = "status"
+    style = "diamond"
+    background = "p:green"
+    background_templates = [ "{{ if .Error }}p:red{{ end }}" ]
+    foreground = "p:black"
+    leading_diamond = ""
+    trailing_diamond = ""
+    template = "{{ if eq .Code 0 }}  {{ else }} {{ reason .Code }}{{ end }}"
+
+        [blocks.segments.properties]
+        always_enabled = true
+
+[[blocks]]
+type = "rprompt"
+overflow = "hidden"
+
+# Execution time module
+    [[blocks.segments]]
+    type = "executiontime"
+    style = "plain"
+    background = "transparent"
+    foreground = "p:green"
+    template = "{{ .FormattedMs }}"
+
+        [blocks.segments.properties]
+        threshold = "5000"
+        style = "round"
+
+[[blocks]]
+type = "prompt"
+alignment = "left"
+newline = true
+
+# Terminal input module
+    [[blocks.segments]]
+    type = "text"
+    style = "plain"
+    background = "transparent"
+    foreground = "p:green"
+    template = "❯"

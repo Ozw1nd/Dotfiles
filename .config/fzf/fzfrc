@@ -1,0 +1,85 @@
+############################################################
+#####                    FZF Config                    #####
+############################################################
+
+##### Settings #####
+#
+# Disable mouse
+--no-mouse
+
+# Enable cyclic scroll
+--cycle
+
+# Number of spaces for the tab character
+--tabstop=4
+
+##### Visual #####
+#
+# Enable line wrap
+--wrap
+
+# Center highlighted match when scrolling
+--scroll-off=100
+
+# Change layout
+--layout=reverse-list
+
+# Add rounded borders
+--border=rounded
+
+# Add margins and padding
+--margin=5%
+--padding=1
+
+# Set style of the finder info
+--info=right
+
+# Add label to the window
+--border-label=fzf
+
+# Disable scrollbar
+--no-scrollbar
+
+# Set symbols used
+--prompt="❯"
+--marker=">"
+--pointer="◆"
+--separator="─"
+--wrap-sign="󱞩"
+
+# Add border to preview window
+--preview-window=border-rounded
+
+# Add label to the preview window
+--preview-label=preview
+
+##### Catpuccin Colour Scheme #####
+#
+# Set foreground colours
+--color=fg:#cdd6f4
+--color=fg+:#cdd6f4
+
+# Set highlight colours
+--color=hl:#a6e3a1
+--color=hl+:#a6e3a1
+
+# Set selected background colour
+--color=selected-bg:#45475a
+
+# Set info colour
+--color=info:#cba6f7
+
+# Set pointer colour
+--color=pointer:#a6e3a1
+
+# Set header color
+--color=header:#a6e3a1
+
+# Set streaming indicator colour
+--color=spinner:#f5e0dc
+
+# Set multi-select marker colour
+--color=marker:#b4befe
+
+# Set prompt colour
+--color=prompt:#a6e3a1
